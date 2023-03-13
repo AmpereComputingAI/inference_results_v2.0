@@ -120,13 +120,13 @@ POWER_LOGS_TEMP_DIR = $(BUILD_DIR)/power_logs_temp
 # Set the Triton directory
 TRITON_DIR = $(BUILD_DIR)/triton-inference-server
 TRITON_OUT_DIR = $(TRITON_DIR)/out
-TRITON_URL = https://github.com/triton-inference-server/server
+TRITON_URL = https://github.com/AmpereComputingAI/server.git
 TRITON_HASH = mlperf-inference-v2.0
 TRITON_COMMON_HASH = mlperf-inference-v2.0
 TRITON_CORE_HASH = mlperf-inference-v2.0
 TRITON_BACKEND_HASH = mlperf-inference-v2.0
 TRITON_THIRDPARTY_HASH = mlperf-inference-v2.0
-TRITON_TENSORRT_HASH = pull/21/head
+TRITON_TENSORRT_HASH = mlperf-inference-v2.0
 TRITON_PYTHON_BE_HASH = pull/106/head
 
 # Set this to 0 once repo is frozen

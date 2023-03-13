@@ -32,6 +32,7 @@ SHELL ["/bin/bash", "-c"]
 ARG CUDA_VER=11.6
 ARG USE_NIGHTLY=1
 # Install core packages
+RUN apt-key adv  --keyserver keyserver.ubuntu.com --recv-keys A4B469963BF863CC
 RUN apt update \
  && apt install -y --no-install-recommends build-essential autoconf libtool git \
         ccache curl wget pkg-config sudo ca-certificates automake libssl-dev \
@@ -71,8 +72,8 @@ RUN python3 -m pip install --upgrade pip \
  && python3 -m pip install --upgrade setuptools wheel virtualenv Cython==0.29.23
 
 # Break requirements into two lists because some of them require that other packages be fully installed first.
-RUN python3 -m pip install -r requirements.aarch64.1.txt \
- && python3 -m pip install -r requirements.aarch64.2.txt
+RUN python3 -m pip install -r requirements.aarch64.1.txt
+RUN python3 -m pip install --ignore-installed -r requirements.aarch64.2.txt
 
 # Install HuggingFace Transformers
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y \
